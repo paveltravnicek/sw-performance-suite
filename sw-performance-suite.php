@@ -13,6 +13,23 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+require __DIR__ . '/plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$swUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/paveltravnicek/sw-performance-suite/',
+	__FILE__,
+	'sw-performance-suite'
+);
+
+$swUpdateChecker->setBranch('main');
+$swUpdateChecker->getVcsApi()->enableReleaseAssets('/\.zip$/i');
+
 final class SW_Performance_Suite {
     const VERSION = '1.0';
     const OPTION_KEY = 'swps_settings';
