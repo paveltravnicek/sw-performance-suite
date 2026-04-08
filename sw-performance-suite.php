@@ -5,6 +5,7 @@
  * Version: 1.0
  * Author: Smart Websites
  * Author URI: https://smart-websites.cz
+ * Update URI: https://github.com/paveltravnicek/sw-performance-suite/
  * Text Domain: sw-performance-suite
  */
 
